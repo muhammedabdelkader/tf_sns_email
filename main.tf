@@ -8,7 +8,7 @@ locals {
 }
 
 data "template_file" "cloudformation_sns_stack" {
-  template = file("${path.module}/templates/email-sns-stack.json.tpl")
+  template = templatefile("${path.module}/templates/email-sns-stack.json.tpl")
 
   vars = {
     display_name  = var.display_name
